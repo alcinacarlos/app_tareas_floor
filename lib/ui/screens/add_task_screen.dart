@@ -35,7 +35,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 final task = Task(
-                  DateTime.now().millisecondsSinceEpoch, // ID único basado en timestamp
+                  DateTime.now()
+                      .millisecondsSinceEpoch, // ID único basado en timestamp
                   _titleController.text,
                   _descriptionController.text,
                   false,
@@ -44,7 +45,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 Navigator.pop(context);
               }
             },
-          )
+          ),
         ],
       ),
       body: Padding(
@@ -56,14 +57,20 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(labelText: 'Title'),
-                validator: (value) =>
-                    value == null || value.isEmpty ? 'Please enter a title' : null,
+                validator:
+                    (value) =>
+                        value == null || value.isEmpty
+                            ? 'Please enter a title'
+                            : null,
               ),
               TextFormField(
                 controller: _descriptionController,
                 decoration: InputDecoration(labelText: 'Description'),
-                validator: (value) =>
-                    value == null || value.isEmpty ? 'Please enter a description' : null,
+                validator:
+                    (value) =>
+                        value == null || value.isEmpty
+                            ? 'Please enter a description'
+                            : null,
               ),
               SizedBox(height: 20),
               ElevatedButton(

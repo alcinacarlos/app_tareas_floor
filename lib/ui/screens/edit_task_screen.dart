@@ -22,7 +22,9 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.task.title);
-    _descriptionController = TextEditingController(text: widget.task.description);
+    _descriptionController = TextEditingController(
+      text: widget.task.description,
+    );
     _isCompleted = widget.task.isCompleted;
   }
 
@@ -55,7 +57,7 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
                 Navigator.pop(context);
               }
             },
-          )
+          ),
         ],
       ),
       body: Padding(
@@ -67,14 +69,20 @@ class _EditTaskScreenState extends State<EditTaskScreen> {
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(labelText: 'Title'),
-                validator: (value) =>
-                    value == null || value.isEmpty ? 'Please enter a title' : null,
+                validator:
+                    (value) =>
+                        value == null || value.isEmpty
+                            ? 'Please enter a title'
+                            : null,
               ),
               TextFormField(
                 controller: _descriptionController,
                 decoration: InputDecoration(labelText: 'Description'),
-                validator: (value) =>
-                    value == null || value.isEmpty ? 'Please enter a description' : null,
+                validator:
+                    (value) =>
+                        value == null || value.isEmpty
+                            ? 'Please enter a description'
+                            : null,
               ),
               SwitchListTile(
                 title: Text('Completed'),

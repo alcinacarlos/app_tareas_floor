@@ -27,9 +27,7 @@ class TaskListItem extends StatelessWidget {
       onLongPress: onLongPress,
       onTap: onTap,
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 4,
         margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         color: isSelected ? Colors.deepPurple.withAlpha(100) : Colors.white,
@@ -41,16 +39,26 @@ class TaskListItem extends StatelessWidget {
               decoration: task.isCompleted ? TextDecoration.lineThrough : null,
             ),
           ),
-          subtitle: Text(task.description),
-          leading: isSelecting
-              ? Icon(
-                  isSelected ? Icons.check_circle : Icons.radio_button_unchecked,
-                  color: isSelected ? Colors.deepPurple : Colors.grey,
-                )
-              : null,
+          subtitle: Text(
+            task.description,
+            style: TextStyle(
+              decoration: task.isCompleted ? TextDecoration.lineThrough : null,
+            ),
+          ),
+          leading:
+              isSelecting
+                  ? Icon(
+                    isSelected
+                        ? Icons.check_circle
+                        : Icons.radio_button_unchecked,
+                    color: isSelected ? Colors.deepPurple : Colors.grey,
+                  )
+                  : null,
           trailing: IconButton(
             icon: Icon(
-              task.isCompleted ? Icons.check_circle : Icons.radio_button_unchecked,
+              task.isCompleted
+                  ? Icons.check_circle
+                  : Icons.radio_button_unchecked,
               color: task.isCompleted ? Colors.deepPurple : Colors.grey,
             ),
             onPressed: () {
