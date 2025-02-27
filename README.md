@@ -1,8 +1,3 @@
-<video src="./testeoapp.webm" controls width="600">
-  Tu navegador no soporta la etiqueta de video
-</video>
-
-
 # Aplicación de Tareas con Flutter y Floor
 
 Esta es una aplicación simple de gestión de tareas hecha con Flutter. Utiliza la biblioteca Floor para la gestión de bases de datos locales y el paquete Provider para la gestión de estados
